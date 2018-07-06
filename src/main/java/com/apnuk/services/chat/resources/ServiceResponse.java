@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 /**
  * The ServiceResponse that will be returned to the caller of the API
@@ -77,7 +77,7 @@ public class ServiceResponse<T> implements Serializable {
         
     }
     
-    /** Used where there is only a single data item. */
+   
     public ServiceResponse setSingularData(T data){
         this.data = new ArrayList<>();
         this.data.add(data);

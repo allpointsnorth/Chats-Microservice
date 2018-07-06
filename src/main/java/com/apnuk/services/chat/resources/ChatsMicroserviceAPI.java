@@ -2983,8 +2983,7 @@ public class ChatsMicroserviceAPI {
         }
     }
    
-   
-   
+ 
     @ApiOperation(value = "Updates the Scheme with the specified id.", notes = "Updates the Scheme with the provided id associated with the Chat with the specified id, the id of the updated Scheme is then returned to the caller.  ",tags={""})
     @RequestMapping(value = "/{id}/schemes/{schemeId}",method = PUT)
     public ResponseEntity<ServiceResponse<String>> updateChatScheme(@ApiParam(name="scheme", value="The updated scheme to associate with the Chat.")
@@ -3026,7 +3025,6 @@ public class ChatsMicroserviceAPI {
     }
     
     
-    
     @ApiOperation(value = "Deletes the Scheme with the specified id.", notes = "Deletes the Scheme with the provided id associated with the Chat with the specified id, the id of the deleted Scheme is then returned to the caller. It is important to note that the Scheme is only \"soft deleted\" and thus not actually removed from the system. ",tags={""})
     @RequestMapping(value = "/{id}/schemes/{schemeId}",method = DELETE)
     public ResponseEntity<ServiceResponse<String>> deleteChatScheme(@ApiParam(name="id", value="The id of the Chat that the Scheme to be deleted applies to.")
@@ -3062,9 +3060,7 @@ public class ChatsMicroserviceAPI {
         }
     }
     
-    
-    
-    
+  
     @ApiOperation(value = "Gets the Scheme with the specified id.", notes = "Gets the Scheme with the provided id associated with the Chat with the specified id.  ",tags={""})
     @RequestMapping(value = "/{id}/schemes/{schemeId}",method = GET)
     public ResponseEntity<ServiceResponse<Scheme>> getChatSchemeById(@ApiParam(name="id", value="The id of the Chat that the Scheme applies to.")
@@ -3113,9 +3109,9 @@ public class ChatsMicroserviceAPI {
         Simply redirects to the API documentation for this micro service, this method is NOT part
         of the Chat public API itself and thus may be removed or disabled in production
         builds. 
-     * @param request
-     * @param response
-     * @return 
+     * @param request The request
+     * @param response the Response
+     * @return ResponseEntity the docs document.
      * @throws javax.servlet.ServletException
      * @throws java.io.IOException
      * @throws java.net.URISyntaxException

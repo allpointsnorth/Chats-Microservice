@@ -20,7 +20,6 @@ import com.apnuk.services.chat.dtos.TemplateEntry;
 import com.apnuk.services.chat.exceptions.ChatsServiceException;
 import com.apnuk.services.chat.resources.ListOptions;
 import com.apnuk.services.chat.utilities.transformations.TransformerData;
-import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
@@ -30,14 +29,11 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ChatsService {
     
-    //chat
+   
 
     /**
      * Lists all currently registered chats
      * @param listOptions The options to apply to the listing operation.
-     * @param includeDeleted flag which specifies whether or not previously deleted chats should be 
-     *                       included in the results.
-     * @param resultsLimit The maximum number of results to fetch, defaults to 1000 when not specified.
      * @return TransformerData<Chat> All currently registered Chats, with one or transformation applied
      *                               as specified in the provided ListOptions instance.
      * @throws ChatsServiceException Where an error occurs during the process of listing chats.
@@ -136,7 +132,7 @@ public interface ChatsService {
     /**
      * Gets all Templates associated with the chat with the specified id.
      * @param chatId Then id of the chat to get templates for.
-     * @param includeDeleted indicates if deleted entries should be included in the results.
+     * @param listOptions The options to apply to the Listing operation.
      * @return List<Template> List of templates associated with the chat with the specified id.
      * @throws ChatsServiceException Where an error occurs whilst attempting to fetch Templates 
      *                               for the Chat with the specified id.
@@ -201,7 +197,8 @@ public interface ChatsService {
      * the specified id.
      * @param chatId The id of the Chat the Template to list entries for relates.
      * @param templateId The id of the Template to list entries for.
-     * @return List<TemplateEntry> List of Entries related to the template with the specified id.
+     * @param listOptions The options to apply to the Listing operation
+     * @return List<Template> List of Entries related to the template with the specified id.
      * @throws ChatsServiceException Where an error occurs during the process of listing entries
      *                               related to the specified Template.
      */
@@ -248,7 +245,7 @@ public interface ChatsService {
     /**
      * Gets all Networks associated with the chat with the specified id.
      * @param chatId Then id of the chat to get networks for.
-     * @param includeDeleted indicates if deleted entries should be included in the results.
+     * @param listOptions The options to apply to the Listing operation   
      * @return List<Network> List of networks associated with the chat with the specified id.
      * @throws ChatsServiceException Where an error occurs whilst attempting to fetch Networks 
      *                               for the Chat with the specified id.
@@ -304,7 +301,7 @@ public interface ChatsService {
     /**
      * Gets all Routes associated with the chat with the specified id.
      * @param chatId Then id of the chat to get routes for.
-     * @param includeDeleted indicates if deleted entries should be included in the results.
+     * @param listOptions The options to apply to the Listing operation
      * @return List<Route> List of routes associated with the chat with the specified id.
      * @throws ChatsServiceException Where an error occurs whilst attempting to fetch Routes 
      *                               for the Chat with the specified id.
@@ -370,7 +367,7 @@ public interface ChatsService {
     /**
      * Gets all Keywords associated with the chat with the specified id.
      * @param chatId Then id of the chat to get keywords for.
-     * @param includeDeleted indicates if deleted entries should be included in the results.
+     * @param listOptions The options to apply to the Listing operation
      * @return List<Keyword> List of keywords associated with the chat with the specified id.
      * @throws ChatsServiceException Where an error occurs whilst attempting to fetch Keywords 
      *                               for the Chat with the specified id.
@@ -434,7 +431,7 @@ public interface ChatsService {
     /**
      * Gets all NoteNames associated with the chat with the specified id.
      * @param chatId Then id of the chat to get noteNames for.
-     * @param includeDeleted indicates if deleted entries should be included in the results.
+     * @param listOptions The options to apply to the Listing operation
      * @return List<NoteName> List of noteNames associated with the chat with the specified id.
      * @throws ChatsServiceException Where an error occurs whilst attempting to fetch NoteNames 
      *                               for the Chat with the specified id.
@@ -500,7 +497,7 @@ public interface ChatsService {
     /**
      * Gets all Promos associated with the chat with the specified id.
      * @param chatId Then id of the chat to get promos for.
-     * @param includeDeleted indicates if deleted entries should be included in the results.
+     * @param listOptions The options to apply to the Listing operation
      * @return List<Promo> List of promos associated with the chat with the specified id.
      * @throws ChatsServiceException Where an error occurs whilst attempting to fetch Promos 
      *                               for the Chat with the specified id.
@@ -562,7 +559,7 @@ public interface ChatsService {
     /**
      * Gets all Categories associated with the chat with the specified id.
      * @param chatId Then id of the chat to get categories for.
-     * @param includeDeleted indicates if deleted entries should be included in the results.
+     * @param listOptions The options to apply to the Listing operation
      * @return List<Category> List of categories associated with the chat with the specified id.
      * @throws ChatsServiceException Where an error occurs whilst attempting to fetch Categories 
      *                               for the Chat with the specified id.
@@ -630,7 +627,7 @@ public interface ChatsService {
     /**
      * Gets all Affiliates associated with the chat with the specified id.
      * @param chatId Then id of the chat to get affiliates for.
-     * @param includeDeleted indicates if deleted entries should be included in the results.
+     * @param listOptions The options to apply to the Listing operation
      * @return List<Affiliate> List of affiliates associated with the chat with the specified id.
      * @throws ChatsServiceException Where an error occurs whilst attempting to fetch Affiliates 
      *                               for the Chat with the specified id.
@@ -647,7 +644,7 @@ public interface ChatsService {
      * @throws ChatsServiceException Where an error occurs whilst attempting to fetch Affiliate with the provided id 
      *                               for the Chat with the specified id.
      */
-     public Affiliate getChatAffiliate(int chatId,int affilaiteId) throws ChatsServiceException;
+     public Affiliate getChatAffiliate(int chatId,int affiliateId) throws ChatsServiceException;
      
      
      /**
@@ -659,7 +656,7 @@ public interface ChatsService {
      * @throws ChatsServiceException Where an error occurs whilst attempting to create Affiliates 
      *                               and associate it with the Chat with the specified id.
      */
-     public int createChatAffiliate(int chatId,Affiliate affilaite) throws ChatsServiceException;
+     public int createChatAffiliate(int chatId,Affiliate affiliate) throws ChatsServiceException;
      
      /**
      * Updates the chat Affiliate associated with the chat with the specified id;
@@ -695,7 +692,7 @@ public interface ChatsService {
     /**
      * Gets all Schemes associated with the chat with the specified id.
      * @param chatId Then id of the chat to get schemes for.
-     * @param includeDeleted indicates if deleted entries should be included in the results.
+     * @param listOptions The options to apply to the Listing operation.
      * @return List<Scheme> List of schemes associated with the chat with the specified id.
      * @throws ChatsServiceException Where an error occurs whilst attempting to fetch Schemes 
      *                               for the Chat with the specified id.

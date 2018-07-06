@@ -41,6 +41,8 @@ public class AbstractDataTransformer {
         protected method, provides access to class field map data, will implicitly introspect 
         the runtime type of the provided object to extract and store field data where such
         data does not already exist in the internal map. 
+        @param aClass The class to obtain field data for.
+        @return Map<String,Field> Map of fields for the class with the specified name.
      */
     protected Map<String,Field> getClassFieldMap(Class aClass){
         

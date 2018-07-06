@@ -57,7 +57,8 @@ public class NameValuePairs {
         return this;
     }
     
-    /** Expects multiple values for each key to be specified as comma-delimited strings. */
+    /** Expects multiple values for each key to be specified as comma-delimited strings.
+     * @param nameValuePairs A map of name value pairs*/
     public NameValuePairs addAllPairsAsStrings(Map<String,String> nameValuePairs){
         
         nameValuePairs.forEach((k,v)->{this.addPair(k,v);});

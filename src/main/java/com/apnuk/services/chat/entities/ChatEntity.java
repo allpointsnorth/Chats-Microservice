@@ -53,7 +53,7 @@ public class ChatEntity implements Serializable, SoftDeletable {
         
     
    
-    /** Zero argument constructor for serialisation purposes. */
+
     public ChatEntity() {
     }
 
@@ -232,10 +232,8 @@ public class ChatEntity implements Serializable, SoftDeletable {
     }
     
     
-    /** 
-        Converts the full ChatEntity object graph to a DTO.This may
-        be used to pre-fetch all ChatEntity data for caching purposes. 
-     */
+   
+   
     public Chat toFullDTO(){
         
         //convert top-level object via the alternate toDTO method.
@@ -322,11 +320,7 @@ public class ChatEntity implements Serializable, SoftDeletable {
     }
     
     
-    /**
-       Returns a Data Transfer Object (DTO) representation of this ChatEntity; this
-       "toDTO variant only converts the top-level Chat entity to a DTO, all
-       sub entities are ignored. 
-    */
+   
     public Chat toDTO(){
         
         Chat chat = new Chat();

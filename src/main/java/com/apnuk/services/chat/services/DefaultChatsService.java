@@ -110,10 +110,6 @@ public class DefaultChatsService implements ChatsService{
    
    
    
-   
-   
-  
-   
    /**Map to serve as a session-scoped cache for loaded top-level Chats entities. */
    private Map<Integer,ChatEntity> localEntityCache;
 
